@@ -1,27 +1,25 @@
 ### GDP PREDICTION PROJECT
-#### <span style='background :powderblue' > PROJECT OBJECTIVE </span><br>
+
+#### PROJECT OBJECTIVE<br>
 To create a GDP prediction model by the most significant 5 variables.
-#### <span style='background :powderblue' > FINAL GDP PREDICTION MODEL AND RESULTS </span><br>
-    A. Selected the most significant variables:
+
+#### FINAL GDP PREDICTION MODEL AND RESULTS <br>
+
+* ###### SELECTED THE MOST SIGNIFICANT VARIABLES:
 1. 'General government revenue / Percent of GDP / '; 
 2. 'General government total expenditure / National currency / Billions'; 
 3. 'Gross national savings / Percent of GDP / '; 
 4. 'Total investment / Percent of GDP / ';
 5. 'Unemployment rate / Percent of total labor force / '; 
 
-
-
-    B. Scope of selected data:
+* ###### SCOPE OF SELECTED DATA:
 EU members countries
 
-
-    C. Outliers:
+* ###### OUTLIERS:
 Dropped data of Luxemburg
 
-
-
-    D. Model results:<br>
-By all features:
+* ###### MODEL RESULTS:
+**BY ALL VARIABLES**
 >***LinearRegression***:<br>
 MSE : 18171.6536<br>
 MAPE : 0.59187<br>
@@ -34,7 +32,7 @@ MAPE : 0.11727<br>
 MSE : 4321.8728<br>
 MAPE : 0.11890<br>
 
-By selected features:
+**BY SELECTED VARIABLES**
 >***LinearRegression***:<br>
 MSE : 18467.6556<br>
 MAPE : 0.61706<br>
@@ -44,10 +42,10 @@ MSE : 15833.3957<br>
 MAPE : 0.33534<br>
 > 
 >***XGBoost-GridSearchCV***:<br>
-MSE : 16086.218801528968<br>
-MAPE : 0.3321843521990776<br>
+MSE : 16086.2188<br>
+MAPE : 0.33218<br>
 
-By selected features without outliers:
+**BY SELECTED VARIABLES WITHOUT OUTLIERS**
 >***LinearRegression***:<br>
 MSE : 10813.3047<br>
 MAPE : 0.69535<br>
@@ -60,8 +58,7 @@ MAPE : 0.29164<br>
 MSE : 5189.1234<br>
 MAPE : 0.29164<br>
 
-
-    E. Selected model for regression:
+* ###### SELECTED MODEL FOR GDP PREDICTION:
 Model with the best performance : ***XGBoost with GridSearch***<br>
 By : ***selected features without outliers***.
 
@@ -74,6 +71,7 @@ By : ***selected features without outliers***.
 6. Run 'GDP_model.ipynb' for overview full project implementation.
 
 #### <span style='background :powderblue' > CONTENT OF 'GDP_MODEL.ipynb'</span>
+
 #### USED FUNCTIONS
 * ###### FOR PLOTTING:
 > ***def label_point*** : setting data labels in plots;<br>
@@ -93,6 +91,7 @@ By : ***selected features without outliers***.
 > ***def XGB_Grid_model*** : Extreme Gradient Boosting (XGBoost) with GridSearch;<br>
 * ###### FOR GDP PREDICTION:
 > ***def GDP_prediction*** : GDP prediction by input values (final XGB_Grid_model);<br>
+
 #### 1. DATA INPUT : LOADING AND CLEANING
 > ***df*** : International Monetary Fund, IMF (main Data);<br>
 > ***df_cont_list*** : Countries By Continent (additional Data);<br>
@@ -100,6 +99,7 @@ By : ***selected features without outliers***.
 > ***df_GDP*** : GDP Data (Gross Domestic Product Per Capita, current prices);<br>
 > ***oecd_country_list*** : OECD Members List;<br>
 > ***eu_country_list*** : EU Members List;<br>
+
 #### 2. DATA ANALYSIS 
 ###### 2.1. BASIC DATA ANALYSIS AND CHECK
 > • 'ESTIMATES START AFTER': Analysis Of Actual And Predicted Data Quantity<br>
@@ -120,6 +120,7 @@ By : ***selected features without outliers***.
 ###### 2.5. Exercise #4
 > Raskite visas metrikas, kurios nėra tuščios 2015 metų duomenyse.<br>
 >> ***Result (output)*** : list 'df4_features' (list of features which are not null in column "2015").
+
 #### 3. GDP PREDICTION MODEL COMPOSITION
 ##### 3.1. DATA PREPARATION
 > • Selecting And Cleaning<br>
@@ -158,6 +159,7 @@ By : ***selected features without outliers***.
 > • XGBoost<br>
 > • XGBoost-GridSearch<br>
 > • • • COMPARISON OF RESULTS<br>
+
 #### 4. GDP PREDICTION MODEL EXECUTION
 > •  Saving Data Without Outliers For Data Reuse In Flask App;<br>
 > •  Selected Variables Data Without Outliers Of EU Members (FYI);<br>
