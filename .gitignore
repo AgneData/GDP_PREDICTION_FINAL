@@ -1,0 +1,8 @@
+.idea/
+*.zip
+.pytest_cache
+.ipynb_checkpoints
+Ex2_Population
+venv
+.DS_Store
+flask_app/tests/__pycache__/test_api.cpython-38-pytest-7.1.1.pyc

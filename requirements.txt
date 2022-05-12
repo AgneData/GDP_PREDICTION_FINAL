@@ -1,0 +1,22 @@
+# for working with url
+flask
+requests
+
+# for opening files
+openpyxl
+
+# for modeling
+yellowbrick
+linearmodels
+numpy
+pandas
+sklearn
+statsmodels
+xgboost
+
+# for plotting
+seaborn
+
+
+
+
